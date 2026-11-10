@@ -12,6 +12,7 @@ const int In4 = 1;
 const int ENA = 5;  
 const int ENB = 3;
 
+// set starting time to zero and recovery finsihed starting at false because it hasn't finished
 unsigned long Time_robot_is_lost = 0;
 bool Recovery_finished = false;
 
