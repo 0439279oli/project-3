@@ -18,6 +18,7 @@ const int ENB = 3;
 #define S3 A3
 #define sensorOut A4
 
+// set variables to hold integers
 int BlackG = 0;
 int BlackR = 0;
 int BlackB = 0;
@@ -94,7 +95,7 @@ void setup() {
   //Turn LED on indicating calibration for white is commensing
   digitalWrite(LED_BUILTIN, HIGH);
 
-//Get Black vals
+//Get White vals
   for (int i = 0; i < 28; i++)
   {
   WhiteR = getRedPW();
@@ -170,12 +171,11 @@ void loop() {
   // Delay to stabilize sensor
   delay(200);
 
-
+  //read calibrated sensor values then determine the line position
+  uint16_t position = line_sensor.readLineBlack(sensor_readings);
+ 
   //if sensor senses white or black
   if((redValue > 200 && greenValue > 200 && blueValue > 200) || (redValue < 100 && greenValue < 100 && blueValue < 100)){
-
- //read calibrated sensor values then determine the line position
-  uint16_t position = line_sensor.readLineBlack(sensor_readings);
 
 
    if(position > 2000){
