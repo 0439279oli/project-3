@@ -73,7 +73,7 @@ if(Recovery_finished){
 little_left();
 }
 
-// If robot hasn't been lost for 1.1 seconds then keep trying to find the line
+// If robot hasn't been lost for 1780 milliseconds then keep trying to find the line
   else{
 little_right();
 }
