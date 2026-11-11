@@ -39,7 +39,7 @@ void setup()
   }
      
 // open the file for reading
-  myFile = SD.open("my.project");
+  myFile = SD.open("project");
 
   if (myFile) {
 
@@ -58,6 +58,9 @@ void setup()
 // file doesn't open
 digitalWrite(LED_BUILTIN, HIGH);
   }
+  delay(2000);
+}
+void loop(){
 
   file_contents.toCharArray(moves, file_contents.length());
 
@@ -80,9 +83,6 @@ digitalWrite(LED_BUILTIN, HIGH);
  }
 }
 }
-void loop(){
-
-}
 
 void left()
 {
@@ -93,7 +93,7 @@ void left()
   digitalWrite(In2, LOW);
   digitalWrite(In3, LOW);
   digitalWrite(In4, HIGH);
-  delay(1500);
+  delay(600);
   stop_motors();
 }
 
@@ -106,7 +106,7 @@ void right()
   digitalWrite(In2, LOW);
   digitalWrite(In3, LOW);
   digitalWrite(In4, LOW);
-  delay(1500);
+  delay(600);
   stop_motors();
 }
 
@@ -119,7 +119,7 @@ void forward()
   digitalWrite(In2, LOW);
   digitalWrite(In3, LOW);
   digitalWrite(In4, HIGH);
-  delay(1500);
+  delay(600);
   stop_motors();
 }
 
@@ -132,7 +132,7 @@ void back()
   digitalWrite(In2, HIGH);
   digitalWrite(In3, HIGH);
   digitalWrite(In4, LOW);
-  delay(1500);
+  delay(600);
   stop_motors();
 }
 
